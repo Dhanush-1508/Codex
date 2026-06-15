@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeX</title>
+    <link rel="shortcut icon" href="logo.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img src="logo.PNG">
+        <h1 class="cname">CodeX</h1>
+        </div>
+        <div class="menu">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="typography.html">TYROGRAPY</a></li>
+            <li><a href="contact.html">CONTACTS</a></li>
+            </ul>
+        </div>
+    </header>
+<section class=" location">
+ <h1 class="head">Location</h1><br>
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.938401184021!2d80.2286043!3d12.9156745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525c90a9105035%3A0xf!2sInjambakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000">
+</iframe>
+</section>
+<section class="forms">
+            <h2>Let’s Get in Touch</h2><br>
+    <form  id="myform">
+        <div class="box">
+        <input  type="text" name="name" id="name" placeholder="𐀪 Your Name" ></div>
+        <p id="errorname"></p>
+        <div class="box"></div>
+        <input type="text" name="email" id="email" placeholder="✉ Your E-mail" >
+        <p id="erroremail"></p>
+        <div class="box"></div>
+        <input type="number" name="number" id="number" placeholder="✆ Your Number" >
+        <p id="errornumber"></p>
+        <div class="box"></div>
+        <textarea name="comments" id="comments" placeholder="𓂃🖋 Your message" ></textarea>
+        <p id="errorcomments"></p>
+        <div><button type="submit">SUBMIT</button></div>
+    </form>
+</section>
+   
+<script>
+    const myformdata=document.getElementById("myform")
+myformdata.addEventListener("submit",(data)=>{
+    data.preventDefault();
+
+    let name=document.getElementById("name").value.trim();
+    let email=document.getElementById("email").value.trim();
+    let number=document.getElementById("number").value.trim();
+    let comments=document.getElementById("comments").value.trim();
+
+        let isValid=true;
+        let errname=document.getElementById("errorname");
+        let erremail=document.getElementById("erroremail");
+        let errnumber=document.getElementById("errornumber");
+        let errcomments=document.getElementById("errorcomments");
+
+
+if(!name){
+    errname.textContent="*Please Fill Your Name"
+    isValid=false;
+}
+
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if(!email){
+        erremail.textContent="*Please Fill Your Email"
+    isValid=false;
+}
+else if(!emailPattern.test(email)){
+        erremail.textContent="*Please enter a valid email"
+    isValid=false;
+}
+
+let mobilepattern=/^[6-9]\d{9}$/;
+if(!number){
+    errnumber.textContent="*Please Fill Your Number"
+    isValid=false;
+}
+else if(!mobilepattern.test(number)){
+    errnumber.textContent="*Please enter a valid number"
+    isValid=false;
+}
+if(!comments){
+    errcomments.textContent="*Please Fill Your Comments"
+    isValid=false;
+}
+
+if(isValid){
+    alert("Data submitted");
+    const userInfo ={
+        name,
+        email,
+        number,
+        comments
+        }
+                    
+        console.log(userInfo);
+        myformdata.reset()
+}
+
+})
+
+
+//     if(!uname || !uemail || !unumber || !ucomments){
+//         alert("please enter a valid form");
+//     }
+// else{
+//     alert("Form Submitted....!");
+
+//     const userdata={
+//         uname,
+//         uemail,
+//         unumber,
+//         ucomments
+//     }
+//     console.log(userdata);
+//     myformdata.reset();
+//     }
+// })
+</script>
+
+
+
+<footer class="fbottom">
+    <div class="about">
+        <h2>About</h2><br>
+        <p>Our coding solutions are built for learners and professionals alike. With well-structured HTML, CSS, and JavaScript components, you can easily customize, expand, and launch functional websites for personal or business usewithout complexity.</p>
+    </div>
+    <div class="comments">
+        <h2>Recent Comments</h2><br>
+        <p>Web Performance Team on<br>
+            Boosting Performance and Search Visibility in Coding Websites<br><br>
+            UI/UX Experts on<br>
+            Essential Checklist for Selecting the Right Web Template<br><br>
+            Full-Stack Developers on<br>
+            Building a Flexible and Scalable Coding Platform</p>
+    </div>
+    <div class="contact">
+        <h2>Contacts</h2><br>
+        <p>1st Cross Street Hanuman colony, Injambakkam</p><br>
+        <p>Phone:<a href="tel:+919486114659">+919486114659</a></p><br>
+        <p>E-mail:<a href="mailto:dhanushvenkat2003@gmail.com">dhanushvenkat@gmail.com</a></p><br>
+        <p>We are open Mn-Fr: 10 am-8 pm</p>
+    </div>
+    <div class="quick">
+        <h2>Quick link</h2><br>
+        <a href="index.html">HOME</a><br>
+        <a href="about.html">ABOUT</a><br>
+        <a href="typography.html">TYROGRAPY</a><br>
+        <a href="contact.html">CONTACTS</a><br>
+    </div>
+</footer>
+<div class="logolink">
+        <p>CodeX © 2026. Design by Dhanush</p>
+        <div class="social-icons">
+    <a href="https://www.facebook.com/vijay.dhanush.3532" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a href="https://twitter.com/Dhanush_venkat8" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+    </a>
+    <a href="https://www.instagram.com/dhanush_venkat__" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+    </a>
+    <a href="https://www.linkedin.com/in/dhanush-v-93542b3b0" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+    <a href="https://github.com/Dhanush-1508" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>  
+    </div> 
+    </div>
+</body>
+</html>
